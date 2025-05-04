@@ -19,7 +19,7 @@ public class UserService {
     }
 
     public User finById(Long id) {
-        Optional<User> obj = userRepository.findById(id);
-        return obj.get();
+        Optional<User> user = userRepository.findById(id);
+        return user.orElse(null);
     }
 }
