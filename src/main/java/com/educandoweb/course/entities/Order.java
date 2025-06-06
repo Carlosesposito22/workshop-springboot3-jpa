@@ -83,6 +83,14 @@ public class Order implements Serializable {
         this.payment = payment;
     }
 
+    public Double getTotal() {
+        double soma = 0.0;
+        for (OrderItem x : items) {
+            soma += x.getSubtotal();
+        }
+        return soma;
+    }
+
     @Override
     public final boolean equals(Object o) {
         if (!(o instanceof Order order)) return false;
